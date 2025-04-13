@@ -1,4 +1,4 @@
-import factory
+import factory # type: ignore
 
 from django.contrib.auth.models import User
 from product.factories import ProductFactory

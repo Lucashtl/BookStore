@@ -26,6 +26,13 @@ RUN apt-get update && \
 RUN pip install --upgrade pip && \
     pip install poetry
 
+
+# install postgres dependencies
+RUN apt-get update \
+    && apt-get -y install libpq-dev gcc \
+    && pip install psycopg2
+
+
 WORKDIR $PYSETUP_PATH
 COPY pyproject.toml poetry.lock ./
 
@@ -41,6 +48,9 @@ FROM python-base as production
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 COPY --from=builder-base /app /app
 
+
+
 WORKDIR /app
 EXPOSE 8000
+
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

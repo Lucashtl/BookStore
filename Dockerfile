@@ -50,6 +50,7 @@ COPY --from=builder-base /app /app
 
 
 
+
 WORKDIR /app
 EXPOSE 8000
 

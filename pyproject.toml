@@ -2,9 +2,7 @@
 name = "bookstore"
 version = "0.1.0"
 description = "BookStore api"
-authors = [
-    {name = "Lucas Fernandes" email = "lucasuzumaki69@hotmail.com"}
-]
+authors = ["Lucas Fernandes <lucasuzumaki69@hotmail.com>"]
 readme = "README.md"
 python = ">=3.10"
 dependencies = [

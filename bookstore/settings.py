@@ -157,4 +157,8 @@ INTERNAL_IPS = [
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(" ")
+ALLOWED_HOSTS = [
+    'bookstore-9amb.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]

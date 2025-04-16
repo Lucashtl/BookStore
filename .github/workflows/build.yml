@@ -48,7 +48,7 @@ jobs:
           echo "SQL_PASSWORD=bookstore_dev" >> $GITHUB_ENV
           echo "SQL_HOST=postgres" >> $GITHUB_ENV
           echo "SQL_PORT=5432" >> $GITHUB_ENV
-          echo "DJANGO_SETTINGS_MODULE=your_project.settings" >> $GITHUB_ENV
+          echo "DJANGO_SETTINGS_MODULE=bookstore.settings" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |

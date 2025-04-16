@@ -58,9 +58,6 @@ jobs:
       - name: Wait for PostgreSQL
         run: sleep 10 # Espera o PostgreSQL inicializar
 
-      - name: Run migrations
-        run: poetry run python manage.py migrate
-
       - name: Run tests
 
         run: poetry run python manage.py test

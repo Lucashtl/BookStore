@@ -62,10 +62,6 @@ jobs:
         run: poetry run python manage.py migrate
 
       - name: Run tests
-      - name: Show DJANGO_SETTINGS_MODULE env
-        run: |
-          echo "DJANGO_SETTINGS_MODULE is: $DJANGO_SETTINGS_MODULE"
-          ls -la
-          ls -la bookstore
+      
 
         run: poetry run python manage.py test

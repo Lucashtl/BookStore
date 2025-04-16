@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bookstore
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bookstore.wsgi
+    envVars:
+      - key: DJANGO_ALLOWED_HOSTS
+        value: bookstore-9amb.onrender.com
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - "**/*"
+    preDeployCommand: python manage.py migrate

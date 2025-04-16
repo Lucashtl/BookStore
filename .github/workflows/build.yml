@@ -14,7 +14,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:13
+        image: postgres:16-alpine
         env:
           POSTGRES_USER: bookstore_dev
           POSTGRES_PASSWORD: bookstore_dev

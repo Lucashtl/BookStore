@@ -54,4 +54,4 @@ RUN chmod +x /wait_for_db.sh
 
 
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["sh", "-c", "/wait_for_db.sh && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]

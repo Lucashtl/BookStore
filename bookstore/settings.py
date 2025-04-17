@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import os
 from pathlib import Path
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -89,6 +89,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DATABASES = {
     "default": {
+        
         "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
         "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
         "USER": os.environ.get("SQL_USER", "user"),
@@ -98,6 +99,13 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+    "default": dj_database_url.parse(
+        os.environ.get(
+    "DATABASE_URL",
+    "postgresql://bookstore_db_2qzr_user:AfSVR5ZjioPGXtb2pi5NPdtredBTe1EI@dpg-d003vqqli9vc739h8vhg-a.virginia-postgres.render.com/bookstore_db_2qzr"
+    ))
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
